@@ -20,7 +20,8 @@ app.listen(app.get('port'), () => {
 });
 
 app.get('/api/v1/papers', (request, response) => {
-  database('papers').select()
+  database('papers')
+    .select()
     .then((papers) => {
       response.status(200).json(papers);
     })
